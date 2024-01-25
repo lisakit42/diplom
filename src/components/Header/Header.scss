@@ -1,0 +1,30 @@
+/* Header.css */
+
+.header {
+    background-color: #ffffff; /* Белый цвет фона */
+    width: 100%; /* Ширина шапки */
+    height: 116px; /* Высота шапки (пример) */
+    border-bottom: 1px solid rgb(0, 0, 0);
+  }
+
+  .line {
+    width: 100% !important;
+    height: 0px;
+    flex-shrink: 0;
+    stroke-width: 0.5px;
+    stroke: #4D331F;
+    position: absolute;
+    top: 33px;
+  }
+
+  .logo {
+    display: flex;
+    width: 71px;
+    height: 71px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    position: absolute;
+    top: 38px;
+    left: 70;
+  }

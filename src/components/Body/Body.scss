@@ -1,0 +1,57 @@
+/* Body.css */
+body {
+  background-color: #E6B17E;
+
+  .box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h3 {
+      color: #4D331F;
+      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      font-family: Montserrat;
+      font-size: 30px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      text-transform: uppercase;
+    }
+  }
+
+  .new-content {
+    padding: 20px;
+    border: 1px solid #000;
+    background-color: white;
+    width: 84%;
+    height: 441px;
+    flex-shrink: 0;
+  }
+
+  .mailing {
+    padding: 20px;
+    border: 1px solid #000;
+    background-color: white;
+    width: 84%;
+    height: 257px;
+    flex-shrink: 0;
+  }
+
+  .popular {
+    padding: 20px;
+    border: 1px solid #000;
+    background-color: white;
+    width: 84%;
+    height: 441px;
+    flex-shrink: 0;
+  }
+
+  .premium {
+    padding: 20px;
+    border: 1px solid #000;
+    background-color: white;
+    width: 84%;
+    height: 370px;
+    flex-shrink: 0;
+  }
+}
