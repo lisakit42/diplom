@@ -1,0 +1,63 @@
+.elementsrow {
+  flex-direction: row;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.link {
+  color: #4D331F;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.mainheader {
+  background-color: #ffffff; 
+  width: 100%; 
+  height: auto; 
+}
+
+.logo {
+  margin: 5%;
+}
+
+.vertline {
+  height: 76px;
+  border-left: 0.5px solid #4D331F;
+  opacity: 70%;
+}
+
+.LogoAndSlogan {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.poiskLink {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.poisk {
+  width: 18px;
+  height: 18px;
+  margin: 5%;
+}
+
+.slogan {
+  text-align: left;
+  color: #4D331F;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+  margin-left: 8%;
+}

@@ -1,7 +1,6 @@
-// Body.jsx
-
 import React from 'react';
-import './Body.css'; // Импортируем стили
+import './Body.scss';
+import PremiumPic from '../upload/mainpagepremium.png';
 
 const Body = () => {
   return (
@@ -17,7 +16,12 @@ const Body = () => {
           <div className="popular"></div>
 
           <h3>Premium подписка</h3>
-          <div className="premium"></div>
+          <div className="premium">
+            <img src={PremiumPic} alt="" className='PremiumPic'/>
+
+            <p className='PremiumTextBlock'>Безлимитный доступ ко всем музыкальным произведениям<br />всего за 200 рублей в месяц!</p>
+            <p className='PremiumTextBlockButton'><b>Оформить</b></p>
+          </div>
         </div>
     </div>
   );
