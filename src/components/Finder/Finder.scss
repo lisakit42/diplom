@@ -1,0 +1,71 @@
+.MainDiv {
+    * {
+        box-sizing: border-box;
+    }
+    form {
+        position: relative;
+        width: 300px;
+        margin: 0 auto;
+        height: 42px;
+    }
+    .inputFinder {
+        height: 50px;
+        width: 0;
+        padding: 0 42px 0 15px;
+        border: none;
+        border-bottom: 2px solid transparent;
+        outline: none;
+        background: transparent;
+        transition: 0.4s cubic-bezier(0, 0.8, 0, 1);
+        position: absolute;
+        right: 0;
+        z-index: 2;
+        font-family: Montserrat;
+    }
+    input:focus {
+        width: 300px;
+        z-index: 1;
+        border-bottom: 2px solid #e6b17e;
+    }
+
+    button {
+        background: #ffffff;
+        border: none;
+        height: 42px;
+        width: 85px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        cursor: pointer;
+    }
+
+    button:before {
+        //content: "\f002";
+        font-family: Montserrat;
+        font-size: 16px;
+        color: #f9f0da;
+    }
+
+    .poiskLink {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .link2 {
+        color: #4d331f;
+        font-family: Montserrat;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-transform: uppercase;
+        text-decoration: none;
+    }
+
+    .poisk {
+        width: 18px;
+        height: 18px;
+        margin: 5%;
+    }
+}

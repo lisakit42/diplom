@@ -1,32 +1,21 @@
-import { useEffect, useState, Children, cloneElement } from 'react';
-import './Carousel.scss';
+// import './Carousel.scss';
+// import React, { Component } from 'react';
+// import ReactDOM from 'react-dom';
+// import { Carousel } from 'react-responsive-carousel';
 
-const PAGE_WIDTH = 450
-
-export const Carousel = ({children}) => {
-        const [ pages, setPages ] = useState([])
-
-        useEffect(() => {
-            setPages(
-                Children.map(children, child => {
-                    return cloneElement(child, {
-                        style: {
-                            height: '100%',
-                            minWidth: `${PAGE_WIDTH}px`, 
-                            maxWidth: `${PAGE_WIDTH}px`,
-                        },
-                    })
-                })
-            )
-        }, [])
-        return (
-            <div className='main-container'>
-                <div className='window'>
-                    <div className='all-pages-container'>{children}</div>
-                </div>
-            </div>
-        );
-};
-    
-
-    
+// export default () => (
+//     <Carousel>
+//         <div>
+//             <img src="assets/1.jpeg" />
+//             <p className="legend">Legend 1</p>
+//         </div>
+//         <div>
+//             <img src="assets/2.jpeg" />
+//             <p className="legend">Legend 2</p>
+//         </div>
+//         <div>
+//             <img src="assets/3.jpeg" />
+//             <p className="legend">Legend 3</p>
+//         </div>
+//     </Carousel>
+// );

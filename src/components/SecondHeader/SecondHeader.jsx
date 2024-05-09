@@ -1,16 +1,14 @@
-// Header.jsx
-
-import React from 'react';
-import './SecondHeader.scss'; 
+import React from "react";
+import "./SecondHeader.scss";
 
 const SecondHeader = () => {
   return (
-    <div className='secondheader'>
-      <div className='secondlementsrow'>
-        <a href='/' className='linkSecondHeader'>
+    <div className="secondheader">
+      <div className="secondlementsrow">
+        <a href="/authorization/" className="linkSecondHeader">
           <p>Избранное</p>
         </a>
-        <a href='/' className='linkSecondHeader'>
+        <a href="/authorization/" className="linkSecondHeader">
           <p>Личный кабинет</p>
         </a>
       </div>

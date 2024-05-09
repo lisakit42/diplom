@@ -3,22 +3,35 @@ import MainHeader from './components/MainHeader/MainHeader'
 import SecondHeader from './components/SecondHeader/SecondHeader'
 import Body from './components/Body/Body'
 import Footer from './components/Footer/Footer'
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Catalog from './components/Catalog/Catalog';
+import News from './components/News/News';
+import Spisok from './components/Spisok/Spisok';
+import Authorization from './components/Authorization/Authorization';
+import Premium from './components/Premuim/Premium';
 
 const App = () => {
   return (
     <div className="App"> 
       <div className='Headers'>
         <secondheader className="App-secondheader">
-          <SecondHeader /> {/* Используем компонент Header */}
+          <SecondHeader />
         </secondheader>
         <mainheader className="App-mainheader">
-          <MainHeader /> {/* Используем компонент Header */}
+          <MainHeader />
         </mainheader>
       </div>
 
-      <body className="App-body">
-        <Body />
-      </body>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Body />} />
+          <Route path="/catalog/" element={<Catalog />} />
+          <Route path="/news/" element={<News />} />
+          <Route path="/spisok/" element={<Spisok />} />
+          <Route path="/authorization/" element={<Authorization />} />
+          <Route path="/premium/" element={<Premium />} />
+        </Routes>
+      </BrowserRouter>
       
       <footer className="App-footer">
         <Footer />

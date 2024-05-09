@@ -1,0 +1,43 @@
+.MainLogin {
+    display: flex;
+    flex-direction: column;
+    color: #4d331f;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    margin-bottom: 7%;
+}
+
+.Loginbutton {
+    background-color: #4d331f;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    color: #e6b17e;
+    width: 100%;
+    margin-top: 10%;
+    cursor: pointer;
+}
+
+input {
+    font-family: Montserrat;
+    font-weight: 600;
+    color: #4d331f;
+}
+
+.login {
+    margin-top: 5%;
+}
+
+.fields-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.fields-container > * {
+    margin-bottom: 10px;
+}
