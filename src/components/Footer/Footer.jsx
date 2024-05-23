@@ -9,7 +9,9 @@ const Footer = () => {
             <div className="FooterPosition">
                 <div className="LogoAndSloganFooter">
                     <div className="logo">
-                        <img src={logo} alt="Logo" />
+                        <a href="/">
+                            <img src={logo} alt="Logo" />
+                        </a>
                     </div>
                     <div className="vertline"></div>
                     <p className="slogan">

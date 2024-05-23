@@ -9,6 +9,7 @@ import News from './components/News/News';
 import Spisok from './components/Spisok/Spisok';
 import Authorization from './components/Authorization/Authorization';
 import Premium from './components/Premuim/Premium';
+import NotFoundPage from './components/NotFoundPage/NotFoundPage';
 
 const App = () => {
   return (
@@ -30,6 +31,8 @@ const App = () => {
           <Route path="/spisok/" element={<Spisok />} />
           <Route path="/authorization/" element={<Authorization />} />
           <Route path="/premium/" element={<Premium />} />
+
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </BrowserRouter>
       

@@ -1,0 +1,92 @@
+.MainLayout {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    margin: 3%;
+    padding: 3% 0;
+
+    img {
+        opacity: 0.7;
+        height: 130000%;
+    }
+
+    .MainText {
+        font-size: 40px;
+        font-family: Montserrat;
+        color: #4d331f;
+        line-height: normal;
+        position: absolute;
+        text-transform: uppercase;
+        background-color: #e6b17e;
+        padding: 0% 2%;
+        top: 53%;
+    }
+
+    .Text {
+        font-family: Montserrat;
+        color: #4d331f;
+        font-weight: 400;
+        line-height: normal;
+        text-align: left;
+        width: 83%;
+        font-size: 14;
+    }
+
+    .Subs {
+        display: flex;
+        flex-direction: row;
+        width: 83%;
+    }
+
+    .Card1 {
+        background-color: #e6b17e;
+        font-family: Montserrat;
+        color: #4d331f;
+        font-weight: 400;
+        line-height: normal;
+        width: 83%;
+        font-size: 14;
+        padding: 2%;
+        margin: 2%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    h3 {
+        color: #4d331f;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        font-family: Montserrat;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        text-transform: uppercase;
+    }
+
+    .Price {
+        text-transform: uppercase;
+    }
+
+    button {
+      color: #e6b17e;
+      font-family: Montserrat;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      text-transform: uppercase;
+      background-color: #4d331f;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      padding: 2%;
+      margin: 10% 0;
+      align-self: flex-end;
+    }
+}
