@@ -1,171 +1,63 @@
+import { createMusicParts } from '../SearchPage/musicData'
+import React, { useState, useEffect } from 'react';
 import './Catalog.scss';
 
-
 const Catalog = () => {
+  const [musicParts, setMusicParts] = useState([]);
+  const [sortConfig, setSortConfig] = useState({ key: null, direction: 'ascending' });
+
+  useEffect(() => {
+    setMusicParts(createMusicParts());
+  }, []);
+
+  const sortedMusicParts = React.useMemo(() => {
+    let sortableItems = [...musicParts];
+    if (sortConfig.key) {
+      sortableItems.sort((a, b) => {
+        if (a[sortConfig.key] < b[sortConfig.key]) {
+          return sortConfig.direction === 'ascending' ? -1 : 1;
+        }
+        if (a[sortConfig.key] > b[sortConfig.key]) {
+          return sortConfig.direction === 'ascending' ? 1 : -1;
+        }
+        return 0;
+      });
+    }
+    return sortableItems;
+  }, [musicParts, sortConfig]);
+
+  const requestSort = (key) => {
+    let direction = 'ascending';
+    if (sortConfig.key === key && sortConfig.direction === 'ascending') {
+      direction = 'descending';
+    }
+    setSortConfig({ key, direction });
+  };
+
   return (
-    <div className='MainBlock'>
-      <div class="mobile-table">
-        <table>
-          <thead>
-            <tr>
-              <th class="first-column"><h3>Название</h3></th>
-              <th class="secong-column"><h3>Инструмент</h3></th>
-              <th><h3>Формат</h3></th>
-              <th><h3>Цена</h3></th>
+    <div className="MainBlock">
+      <table className="musicTable">
+        <thead>
+          <tr>
+            <th onClick={() => requestSort('name')}><h3>Композитор</h3></th>
+            <th onClick={() => requestSort('song')}><h3>Название</h3></th>
+            <th onClick={() => requestSort('instrument')}><h3>Инструмент</h3></th>
+            <th onClick={() => requestSort('format')}><h3>Формат</h3></th>
+            <th onClick={() => requestSort('price')}><h3>Стоимость</h3></th>
+          </tr>
+        </thead>
+        <tbody>
+          {sortedMusicParts.map((part, index) => (
+            <tr key={index}>
+              <td><a href="/">{part.name}</a></td>
+              <td><a href="/">{part.song}</a></td>
+              <td>{part.instrument}</td>
+              <td>{part.format}</td>
+              <td>{part.price}</td>
             </tr>
-            </thead>
-            <tbody>
-            <tr className='MainTr'>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'><strong>Бетховен</strong> - Лунная соната, №14 op.27</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>Фортепиано, скрипка</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>.pdf, .png</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>Бесплатно</a></td>
-            </tr>
-            <tr>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'><strong>Шопен</strong> - Вальс (до-диез минор)</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>Аккордеон, флейта</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>.png</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>Premium или 199 руб.</a></td>
-            </tr>
-            <tr>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'><strong>Бетховен</strong> - К Элизе (5)</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>Гитара, рог</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>.pdf</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>Premium или 699 руб.</a></td>
-            </tr>
-            <tr>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'><strong>Рахманинов</strong> - Прелюдия op.23 №5 (соль минор)</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>Флейта, гитара</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>.pdf, .png</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>Бесплатно</a></td>
-            </tr>
-            <tr className='MainTr'>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'><strong>Бетховен</strong> - Лунная соната, №14 op.27</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>Фортепиано, скрипка</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>.pdf, .png</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>Бесплатно</a></td>
-            </tr>
-            <tr>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'><strong>Шопен</strong> - Вальс (до-диез минор)</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>Аккордеон, флейта</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>.png</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>Premium или 199 руб.</a></td>
-            </tr>
-            <tr>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'><strong>Бетховен</strong> - К Элизе (5)</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>Гитара, рог</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>.pdf</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>Premium или 699 руб.</a></td>
-            </tr>
-            <tr>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'><strong>Рахманинов</strong> - Прелюдия op.23 №5 (соль минор)</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>Флейта, гитара</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>.pdf, .png</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>Бесплатно</a></td>
-            </tr>
-            
-            <tr className='MainTr'>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'><strong>Бетховен</strong> - Лунная соната, №14 op.27</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>Фортепиано, скрипка</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>.pdf, .png</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>Бесплатно</a></td>
-            </tr>
-            <tr>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'><strong>Шопен</strong> - Вальс (до-диез минор)</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>Аккордеон, флейта</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>.png</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>Premium или 199 руб.</a></td>
-            </tr>
-            <tr>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'><strong>Бетховен</strong> - К Элизе (5)</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>Гитара, рог</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>.pdf</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>Premium или 699 руб.</a></td>
-            </tr>
-            <tr>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'><strong>Рахманинов</strong> - Прелюдия op.23 №5 (соль минор)</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>Флейта, гитара</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>.pdf, .png</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>Бесплатно</a></td>
-            </tr>
-            
-            <tr className='MainTr'>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'><strong>Бетховен</strong> - Лунная соната, №14 op.27</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>Фортепиано, скрипка</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>.pdf, .png</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>Бесплатно</a></td>
-            </tr>
-            <tr>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'><strong>Шопен</strong> - Вальс (до-диез минор)</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>Аккордеон, флейта</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>.png</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>Premium или 199 руб.</a></td>
-            </tr>
-            <tr>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'><strong>Бетховен</strong> - К Элизе (5)</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>Гитара, рог</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>.pdf</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>Premium или 699 руб.</a></td>
-            </tr>
-            <tr>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'><strong>Рахманинов</strong> - Прелюдия op.23 №5 (соль минор)</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>Флейта, гитара</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>.pdf, .png</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>Бесплатно</a></td>
-            </tr>
-            <tr className='MainTr'>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'><strong>Бетховен</strong> - Лунная соната, №14 op.27</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>Фортепиано, скрипка</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>.pdf, .png</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>Бесплатно</a></td>
-            </tr>
-            <tr>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'><strong>Шопен</strong> - Вальс (до-диез минор)</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>Аккордеон, флейта</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>.png</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>Premium или 199 руб.</a></td>
-            </tr>
-            <tr>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'><strong>Бетховен</strong> - К Элизе (5)</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>Гитара, рог</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>.pdf</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>Premium или 699 руб.</a></td>
-            </tr>
-            <tr>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'><strong>Рахманинов</strong> - Прелюдия op.23 №5 (соль минор)</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>Флейта, гитара</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>.pdf, .png</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>Бесплатно</a></td>
-            </tr>
-            
-            <tr className='MainTr'>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'><strong>Бетховен</strong> - Лунная соната, №14 op.27</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>Фортепиано, скрипка</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>.pdf, .png</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>Бесплатно</a></td>
-            </tr>
-            <tr>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'><strong>Шопен</strong> - Вальс (до-диез минор)</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>Аккордеон, флейта</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>.png</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>Premium или 199 руб.</a></td>
-            </tr>
-            <tr>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'><strong>Бетховен</strong> - К Элизе (5)</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>Гитара, рог</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>.pdf</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>Premium или 699 руб.</a></td>
-            </tr>
-            <tr>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'><strong>Рахманинов</strong> - Прелюдия op.23 №5 (соль минор)</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>Флейта, гитара</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>.pdf, .png</a></td>
-              <td><a href='/catalog/bethoven-lunnaya-sonata/' className='linkTable'>Бесплатно</a></td>
-            </tr>
-            
-            </tbody>
-        </table>
-      </div>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };

@@ -1,0 +1,68 @@
+.SearchPage {
+    color: #4d331f;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+    text-decoration: none !important;
+
+    form {
+        padding: 2%;
+    
+    }
+
+    button {
+        color: #e6b17e;
+        font-family: Montserrat;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 800;
+        text-transform: uppercase;
+        background: #4d331f;
+        margin: 1%;
+        padding: 1%;
+    }
+}
+
+.SearchPage input[type="text"] {
+    width: 80%;
+    padding: 1%;
+}
+
+.SearchPage .search-results {
+    background-color: white; /* Белый фон для результатов поиска */
+    width: 85%; /* Ширина 80% */
+    margin: 20px auto; /* Центрирование по горизонтали */
+  }
+  
+  .SearchPage .search-results ul {
+    list-style-type: none; /* Убираем маркеры списка */
+    padding: 0; /* Убираем внутренние отступы */
+  }
+  
+  .SearchPage .search-results ul li {
+    white-space: pre-wrap;
+    padding: 1%;
+    line-height: 13px;
+    font-family: Montserrat;
+    text-align: left;
+    
+  }
+  
+  .SearchPage .search-results ul li:last-child {
+    border-bottom: none; /* Убираем границу с последнего элемента списка */
+  }
+  
+  .SearchPage .search-results ul li a {
+    color: #4d331f; /* Цвет ссылки */
+    text-decoration: none; /* Убираем подчеркивание ссылки */
+    display: block; /* Делаем ссылку блочным элементом, чтобы она занимала всю ширину родительского элемента */
+  }
+  
+  .SearchPage .search-results ul li a:hover {
+    text-decoration: underline; /* Добавляем подчеркивание при наведении на ссылку */
+  }
+
+
