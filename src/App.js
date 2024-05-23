@@ -8,8 +8,9 @@ import Catalog from './components/Catalog/Catalog';
 import News from './components/News/News';
 import Spisok from './components/Spisok/Spisok';
 import Authorization from './components/Authorization/Authorization';
-import Premium from './components/Premuim/Premium';
+import Premium from './components/Premium/Premium';
 import NotFoundPage from './components/NotFoundPage/NotFoundPage';
+import SearchPage from './components/SearchPage/SearchPage';
 
 const App = () => {
   return (
@@ -31,6 +32,8 @@ const App = () => {
           <Route path="/spisok/" element={<Spisok />} />
           <Route path="/authorization/" element={<Authorization />} />
           <Route path="/premium/" element={<Premium />} />
+          <Route path="/searchpage/" element={<SearchPage />} />
+          <Route path="/search/:query" element={<SearchPage />} />
 
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
