@@ -1,3 +1,5 @@
+import React from 'react';
+import { Helmet } from 'react-helmet'; // Импортируйте Helmet
 import "./News.scss";
 import PicBirthday from "../upload/news/birthday.jpg";
 import PicNew from "../upload/news/new.jpg";
@@ -7,6 +9,9 @@ import PicShare from "../upload/news/share.jpg";
 const News = () => {
   return (
     <div className="NewsList">
+      <Helmet>
+        <title>Новости</title>
+      </Helmet>
       <div className="NewsElement">
         <div class="image">
           <img src={PicBirthday} alt="PicBirthday" />

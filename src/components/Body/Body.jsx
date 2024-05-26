@@ -1,12 +1,16 @@
 import "./Body.scss";
 import PremiumPic from "../upload/mainpagepremium.png";
 import InputName from "./InputName/InputName.jsx";
-import InputEmail from "./InputEmail//InputEmail.jsx";
+import InputEmail from "./InputEmail/InputEmail.jsx";
 import Carousel from "../Carousel/Carousel.jsx";
+import { Helmet } from 'react-helmet';
 
 const Body = () => {
     return (
         <div className="Body">
+            <Helmet>
+                <title>Главная страница</title>
+            </Helmet>
             <div className="box">
                 <h3>Наши новинки</h3>
                 <div className="new-content">

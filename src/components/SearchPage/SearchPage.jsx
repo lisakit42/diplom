@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import "./SearchPage.scss";
 import { createMusicParts } from "./musicData";
+import { Helmet } from 'react-helmet'; // Импортируйте Helmet
 
 const SearchPage = () => {
     const [searchResults, setSearchResults] = useState([]);
@@ -33,6 +34,9 @@ const SearchPage = () => {
 
     return (
         <div className="SearchPage">
+            <Helmet>
+                <title>Поиск</title> {/* Установите заголовок страницы */}
+            </Helmet>
             <form onSubmit={handleSubmit}>
                 <input
                     type="text"

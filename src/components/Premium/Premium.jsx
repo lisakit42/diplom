@@ -1,9 +1,14 @@
+import React from "react";
+import { Helmet } from "react-helmet"; // Импортируйте Helmet
 import "./Premium.scss";
 import PremiumPic from "../upload/PremiumPic2.png";
 
 const Premium = () => {
     return (
         <div className="MainLayout">
+            <Helmet>
+                <title>Premium подписка</title>{" "}
+            </Helmet>
             <div className="Pic">
                 <img src={PremiumPic} />
             </div>

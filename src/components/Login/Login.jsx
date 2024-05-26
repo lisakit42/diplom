@@ -1,6 +1,6 @@
 import "./Login.scss";
-
 import React, { useState } from "react";
+import { Helmet } from "react-helmet"; // Импортируйте Helmet
 
 function LoginForm() {
     const [login, setLogin] = useState("");
@@ -16,13 +16,15 @@ function LoginForm() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        // Здесь можно обработать отправку формы, например, отправить данные на сервер
         console.log("Логин:", login);
         console.log("Пароль:", password);
     };
 
     return (
         <div className="MainLogin">
+            <Helmet>
+                <title>Авторизация</title>
+            </Helmet>
             <form onSubmit={handleSubmit}>
                 <div className="fields-container">
                     <div className="login">
@@ -36,7 +38,6 @@ function LoginForm() {
                             onChange={handleLoginChange}
                             required
                             style={{
-                                // width: "40%",
                                 padding: "5px",
                                 border: "1px solid #4D331F",
                                 background: "#E6B17E",
@@ -54,7 +55,6 @@ function LoginForm() {
                             onChange={handlePasswordChange}
                             required
                             style={{
-                                // width: "40%",
                                 padding: "5px",
                                 border: "1px solid #4D331F",
                                 background: "#E6B17E",
