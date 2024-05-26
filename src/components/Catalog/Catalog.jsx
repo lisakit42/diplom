@@ -10,7 +10,7 @@ const FilterArrow = ({ sortConfig, objectNames, index }) => {
             <img
                 src={arrow}
                 alt="abracadabra"
-                className={sortConfig.direction === "ascending" && "rotate"}
+                className={sortConfig.direction === "ascending" ? "rotate" : ""}
             />
         )
     );
@@ -50,6 +50,8 @@ const Catalog = () => {
         }
         setSortConfig({ key, direction });
     };
+
+    const objectNames = ["name", "song", "instrument", "format", "price"];
 
     return (
         <div className="MainBlock">
