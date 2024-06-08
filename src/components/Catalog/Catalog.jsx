@@ -53,6 +53,20 @@ const Catalog = () => {
 
     const objectNames = ["name", "song", "instrument", "format", "price"];
 
+    const getLink = (name, song) => {
+        if (name === "Бетховен Людвиг ван" && song === "Лунная Соната") {
+            return "/catalog/BethovenLunnayaSonata/";
+        }
+        if (
+            name === "Моцарт Вольфганг Амадей" &&
+            song === "Маленькая ночная серенада"
+        ) {
+            return "/catalog/MozartNochnayaSerenada/";
+        }
+        // Добавьте дополнительные условия для других композиторов и произведений
+        return "#";
+    };
+
     return (
         <div className="MainBlock">
             <Helmet>
@@ -117,10 +131,14 @@ const Catalog = () => {
                     {sortedMusicParts.map((part, index) => (
                         <tr key={index}>
                             <td>
-                                <a href="/">{part.name}</a>
+                                <a href={getLink(part.name, part.song)}>
+                                    {part.name}
+                                </a>
                             </td>
                             <td>
-                                <a href="/">{part.song}</a>
+                                <a href={getLink(part.name, part.song)}>
+                                    {part.song}
+                                </a>
                             </td>
                             <td>{part.instrument}</td>
                             <td>{part.format}</td>

@@ -11,6 +11,7 @@ import Authorization from './components/Authorization/Authorization';
 import Premium from './components/Premium/Premium';
 import NotFoundPage from './components/NotFoundPage/NotFoundPage';
 import SearchPage from './components/SearchPage/SearchPage';
+import BethovenLunnayaSonata from './components/Products/Free/BethovenLunnayaSonata/BethovenLunnayaSonata';
 
 const App = () => {
   return (
@@ -34,6 +35,7 @@ const App = () => {
           <Route path="/premium/" element={<Premium />} />
           <Route path="/searchpage/" element={<SearchPage />} />
           <Route path="/search/:query" element={<SearchPage />} />
+          <Route path='/catalog/bethovenlunnayasonata/' element={<BethovenLunnayaSonata />} />
 
           <Route path="*" element={<NotFoundPage />} />
         </Routes>

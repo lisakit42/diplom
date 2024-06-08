@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet'; // Импортируйте Helmet
+import { Helmet } from 'react-helmet';
 import "./News.scss";
 import PicBirthday from "../upload/news/birthday.jpg";
 import PicNew from "../upload/news/new.jpg";
