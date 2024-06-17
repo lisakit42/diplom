@@ -10,7 +10,6 @@
 
     form {
         padding: 2%;
-    
     }
 
     button {
@@ -24,45 +23,44 @@
         margin: 1%;
         padding: 1%;
     }
+
+    input[type="text"] {
+        width: 80%;
+        padding: 1%;
+        font-family: Montserrat;
+        font-weight: 600;
+    }
+
+    .search-results {
+        background-color: white;
+        width: 85%;
+        margin: 20px auto;
+    }
+
+    .search-results ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .search-results ul li {
+        white-space: pre-wrap;
+        padding: 1%;
+        line-height: 13px;
+        font-family: Montserrat;
+        text-align: left;
+    }
+
+    .search-results ul li:last-child {
+        border-bottom: none;
+    }
+
+    .search-results ul li a {
+        color: #4d331f;
+        text-decoration: none;
+        display: block;
+    }
+
+    .search-results ul li a:hover {
+        text-decoration: underline;
+    }
 }
-
-.SearchPage input[type="text"] {
-    width: 80%;
-    padding: 1%;
-}
-
-.SearchPage .search-results {
-    background-color: white; /* Белый фон для результатов поиска */
-    width: 85%; /* Ширина 80% */
-    margin: 20px auto; /* Центрирование по горизонтали */
-  }
-  
-  .SearchPage .search-results ul {
-    list-style-type: none; /* Убираем маркеры списка */
-    padding: 0; /* Убираем внутренние отступы */
-  }
-  
-  .SearchPage .search-results ul li {
-    white-space: pre-wrap;
-    padding: 1%;
-    line-height: 13px;
-    font-family: Montserrat;
-    text-align: left;
-    
-  }
-  
-  .SearchPage .search-results ul li:last-child {
-    border-bottom: none; /* Убираем границу с последнего элемента списка */
-  }
-  
-  .SearchPage .search-results ul li a {
-    color: #4d331f; /* Цвет ссылки */
-    text-decoration: none; /* Убираем подчеркивание ссылки */
-    display: block; /* Делаем ссылку блочным элементом, чтобы она занимала всю ширину родительского элемента */
-  }
-  
-  .SearchPage .search-results ul li a:hover {
-    text-decoration: underline; /* Добавляем подчеркивание при наведении на ссылку */
-  }
-
-

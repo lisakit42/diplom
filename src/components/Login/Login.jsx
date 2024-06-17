@@ -22,49 +22,32 @@ function LoginForm() {
     };
 
     return (
-        <div className="MainLogin">
+        <div className="Mainn">
             <Helmet>
                 <title>Авторизация</title>
             </Helmet>
-            <form onSubmit={handleSubmit}>
-                <div className="fields-container">
-                    <div className="login">
-                        <label htmlFor="login" style={{ display: "block" }}>
-                            Логин:
-                        </label>
-                        <input
-                            type="text"
-                            id="login"
-                            value={login}
-                            onChange={handleLoginChange}
-                            required
-                            style={{
-                                padding: "5px",
-                                border: "1px solid #4D331F",
-                                background: "#E6B17E",
-                            }}
-                        />
-                    </div>
-                    <div className="login">
-                        <label htmlFor="password" style={{ display: "block" }}>
-                            Пароль:
-                        </label>
-                        <input
-                            type="password"
-                            id="password"
-                            value={password}
-                            onChange={handlePasswordChange}
-                            required
-                            style={{
-                                padding: "5px",
-                                border: "1px solid #4D331F",
-                                background: "#E6B17E",
-                            }}
-                        />
-                    </div>
+            <form onSubmit={handleSubmit} className="LoginForm">
+                <div className="form-group">
+                    <label htmlFor="login">Логин:</label>
+                    <input
+                        type="text"
+                        id="login"
+                        value={login}
+                        onChange={handleLoginChange}
+                        required
+                    />
                 </div>
-
-                <button type="submit" className="Loginbutton">
+                <div className="form-group">
+                    <label htmlFor="password">Пароль:</label>
+                    <input
+                        type="password"
+                        id="password"
+                        value={password}
+                        onChange={handlePasswordChange}
+                        required
+                    />
+                </div>
+                <button type="submit" className="LoginButton">
                     Войти
                 </button>
             </form>

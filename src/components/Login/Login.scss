@@ -1,47 +1,39 @@
-.MainLogin {
-    display: flex;
-    flex-direction: column;
-    color: #4d331f;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    font-family: Montserrat;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    margin-bottom: 7%;
+.form-group {
+    margin-bottom: 15px;
 }
 
-.Loginbutton {
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #4d331f;
+    font-weight: 600;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333;
+}
+
+.LoginButton {
     background-color: #4d331f;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    font-family: Montserrat;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
     color: #e6b17e;
-    width: 52%;
-    margin-top: 10%;
-    cursor: pointer;
-    text-transform: uppercase;
     border: none;
-    padding: 10px;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
     text-align: center;
 }
 
-input {
-    font-family: Montserrat;
-    font-weight: 600;
-    color: #4d331f;
+.LoginButton:hover {
+    background-color: #3b2815;
 }
 
-.login {
-    margin-top: 5%;
-}
 
-.fields-container {
-    display: flex;
-    flex-direction: column;
-}
-
-.fields-container > * {
-    margin-bottom: 10px;
-}
