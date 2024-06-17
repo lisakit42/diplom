@@ -3,7 +3,7 @@ import PremiumPic from "../upload/mainpagepremium.png";
 import InputName from "./InputName/InputName.jsx";
 import InputEmail from "./InputEmail/InputEmail.jsx";
 import Carousel from "../Carousel/Carousel.jsx";
-import { Helmet } from 'react-helmet';
+import { Helmet } from "react-helmet";
 
 const Body = () => {
     return (

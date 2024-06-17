@@ -1,0 +1,87 @@
+.Mainn {
+    display: flex;
+    padding-top: 20px;
+}
+
+.RegistrationForm {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    font-family: Montserrat, sans-serif;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #4d331f;
+    font-weight: 600;
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group input[type="email"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-group.left-align {
+    justify-content: flex-start;
+}
+
+.checkbox-group label {
+    color: #4d331f;
+    font-weight: 600;
+    width: 100%;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.RegisterButton {
+    background-color: #4d331f;
+    color: #e6b17e;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+    text-align: center;
+}
+
+.RegisterButton:hover {
+    background-color: #3b2815;
+}
+
+.login-link {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.login-link-style {
+    color: #4d331f;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.login-link-style:hover {
+    text-decoration: underline;
+}

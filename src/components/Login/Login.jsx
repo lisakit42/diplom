@@ -1,6 +1,6 @@
 import "./Login.scss";
 import React, { useState } from "react";
-import { Helmet } from "react-helmet"; // Импортируйте Helmet
+import { Helmet } from "react-helmet";
 
 function LoginForm() {
     const [login, setLogin] = useState("");
@@ -18,6 +18,7 @@ function LoginForm() {
         event.preventDefault();
         console.log("Логин:", login);
         console.log("Пароль:", password);
+        window.location.href = "/profile/";
     };
 
     return (
@@ -62,6 +63,7 @@ function LoginForm() {
                         />
                     </div>
                 </div>
+
                 <button type="submit" className="Loginbutton">
                     Войти
                 </button>

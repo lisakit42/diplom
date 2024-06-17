@@ -12,6 +12,8 @@ import Premium from './components/Premium/Premium';
 import NotFoundPage from './components/NotFoundPage/NotFoundPage';
 import SearchPage from './components/SearchPage/SearchPage';
 import BethovenLunnayaSonata from './components/Products/Free/BethovenLunnayaSonata/BethovenLunnayaSonata';
+import Registration from './components/Registration/Registration';
+import Profile from './components/Profile/Profile';
 
 const App = () => {
   return (
@@ -32,10 +34,12 @@ const App = () => {
           <Route path="/news/" element={<News />} />
           <Route path="/spisok/" element={<Spisok />} />
           <Route path="/authorization/" element={<Authorization />} />
+          <Route path="/registration/" element={<Registration />} />
           <Route path="/premium/" element={<Premium />} />
           <Route path="/searchpage/" element={<SearchPage />} />
           <Route path="/search/:query" element={<SearchPage />} />
           <Route path='/catalog/bethovenlunnayasonata/' element={<BethovenLunnayaSonata />} />
+          <Route path="/profile/" element={<Profile />} />
 
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
