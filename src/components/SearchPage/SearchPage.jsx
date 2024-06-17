@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import "./SearchPage.scss";
 import { createMusicParts } from "./musicData";
-import { Helmet } from 'react-helmet'; // Импортируйте Helmet
+import { Helmet } from "react-helmet";
 
 const SearchPage = () => {
     const [searchResults, setSearchResults] = useState([]);
@@ -32,6 +32,20 @@ const SearchPage = () => {
         navigate(`/search/${searchTerm}`);
     };
 
+    const getLink = (name, song) => {
+        if (name === "Бетховен Людвиг ван" && song === "Лунная Соната") {
+            return "/catalog/BethovenLunnayaSonata/";
+        }
+        if (
+            name === "Моцарт Вольфганг Амадей" &&
+            song === "Маленькая ночная серенада"
+        ) {
+            return "/catalog/MozartNochnayaSerenada/";
+        }
+        // Добавьте дополнительные условия для других композиторов и произведений
+        return "#";
+    };
+
     return (
         <div className="SearchPage">
             <Helmet>
@@ -51,7 +65,7 @@ const SearchPage = () => {
                     <ul>
                         {searchResults.map((result, index) => (
                             <li key={index}>
-                                <a href="/">
+                                <a href={getLink(result.name, result.song)}>
                                     <strong>{result.name}</strong> -{" "}
                                     <span>{result.song}</span>
                                 </a>
