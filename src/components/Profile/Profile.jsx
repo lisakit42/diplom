@@ -1,7 +1,8 @@
 import "./Profile.scss";
 import React, { useState } from "react";
-import ProfilePic from "../upload/profilepic.png";
+import ProfilePic from "../upload/profilepic.svg";
 import EditIcon from "../upload/EditIcon.svg";
+import { Helmet } from "react-helmet";
 
 const Profile = () => {
     const [firstName, setFirstName] = useState("Иван");
@@ -18,6 +19,9 @@ const Profile = () => {
 
     return (
         <div className="ProfileDiv">
+            <Helmet>
+                <title>Личный кабинет</title>
+            </Helmet>
             <div className="ProfileContainer">
                 <img src={ProfilePic} alt="" className="ProfilePic" />
                 <div className="ProfileDetails">
