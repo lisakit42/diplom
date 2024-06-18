@@ -9,7 +9,7 @@ const Body = () => {
     return (
         <div className="Body">
             <Helmet>
-                <title>Главная страница</title>
+                <title>Play in Tune</title>
             </Helmet>
             <div className="box">
                 <h3>Наши новинки</h3>
