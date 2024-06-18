@@ -1,0 +1,131 @@
+.MainPartCatalog {
+    display: flex;
+    flex-direction: row;
+    padding: 1%;
+    background-color: white;
+    margin: 3%;
+    padding: 3%;
+    justify-content: space-between;
+}
+
+.MainPartCatalog img {
+    height: 300px;
+}
+
+.MainDecription {
+    margin: 0 5%;
+}
+
+.MainPartCatalog h2 {
+    color: #4d331f;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+.MainButtons {
+    color: #4d331f;
+    font-family: Montserrat;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-align: left;
+    margin-left: auto;
+}
+
+.MainButtons button {
+    color: #e6b17e;
+    font-family: Montserrat;
+    font-weight: 600;
+    background-color: #4d331f;
+    width: 200px;
+    height: 50px;
+    max-width: 100%;
+    cursor: pointer;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.MainButtons a {
+    margin: 5% 0 0 0;
+    width: auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.specifications {
+    display: flex;
+    flex-direction: row;
+}
+
+.MainPartCatalog p {
+    font-family: Montserrat;
+    font-size: 15px;
+    font-style: normal;
+    line-height: normal;
+    text-transform: uppercase;
+    color: #4d331f;
+}
+
+.svoystvo {
+    font-weight: 800;
+}
+
+.line {
+    height: 70px;
+    border-left: 1px solid #4d331f;
+    opacity: 70%;
+    margin: 1% 5%;
+}
+
+.FavItemContainer {
+    margin-top: 20px;
+}
+
+.FavItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e6b17e;
+    color: #4d331f;
+    width: 200px;
+    height: 50px;
+    border: none;
+    cursor: pointer;
+    font-family: Montserrat;
+    font-weight: 600;
+    font-size: 16px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.FavItem img {
+    margin-right: 10px; /* Добавляем отступ между изображением и текстом */
+    width: 30px;
+    color: #4d331f;
+}
+
+.notification {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: Montserrat;
+    font-size: 16px;
+    width: 300px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

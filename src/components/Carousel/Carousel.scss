@@ -1,0 +1,51 @@
+.carousel {
+    position: relative;
+    filter: drop-shadow(0 0 10px #0003);
+    perspective: 100px;
+    height: 100%;
+}
+
+.content-slide1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    padding: 2%;
+}
+
+.card-content-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-text {
+    color: #4d331f;
+    font-family: Montserrat;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.CardPic {
+    width: 188px;
+    height: 188px;
+}
+
+.slick-next,
+.slick-prev {
+    z-index: 1;
+    width: 50px;
+    height: 50px;
+}
+
+.slick-next:before,
+.slick-prev:before {
+    font-family: "slick";
+    font-size: 47px;
+    line-height: 1.2;
+}
+
+.slick-dots li button:before {
+    color: #4d331f;
+}

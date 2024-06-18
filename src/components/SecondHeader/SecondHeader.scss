@@ -1,0 +1,24 @@
+.secondheader {
+  background-color: #ffffff;
+  width: 100%;
+  border-bottom: 0.5px solid #4d331f;
+}
+
+.secondlementsrow {
+  flex-direction: row;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.linkSecondHeader {
+  margin: 0 10px 0 10px;
+  color: #4d331f;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+  text-decoration: none;
+}

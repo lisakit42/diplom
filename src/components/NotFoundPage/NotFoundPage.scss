@@ -1,0 +1,45 @@
+.MainDivv {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: white;
+    // width: 90%;
+    margin: 3%;
+    padding: 3%;
+
+    .LogoButton {
+        vertical-align: middle;
+    }
+
+    .Pic404 {
+        width: 50%;
+    }
+
+    button {
+        color: #e6b17e;
+        font-family: Montserrat;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        text-transform: uppercase;
+        background-color: #4d331f;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        padding: 5%;
+        // margin: 10% 0;
+        // align-self: flex-end;
+    }
+
+    p {
+        color: #4d331f;
+        font-family: Montserrat;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        text-transform: uppercase;
+    }
+}
