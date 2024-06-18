@@ -1,35 +1,58 @@
 import "./Registration.scss";
 import React, { useState } from "react";
-import { Helmet } from "react-helmet";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import authService from "../../services/authService";
 
 const Registration = () => {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [birthDate, setBirthDate] = useState("");
     const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
     const [newsletter, setNewsletter] = useState(false);
     const [agreement, setAgreement] = useState(false);
+    const [errorMessage, setErrorMessage] = useState("");
+    const navigate = useNavigate();
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
         if (!agreement) {
             alert("Вы должны принять пользовательское соглашение");
             return;
         }
-        console.log("Имя:", firstName);
-        console.log("Фамилия:", lastName);
-        console.log("Дата рождения:", birthDate);
-        console.log("Электронная почта:", email);
-        console.log("Подписка на рассылку:", newsletter);
-        console.log("Пользовательское соглашение:", agreement);
+
+        try {
+            const response = await authService.register(
+                firstName,
+                lastName,
+                birthDate,
+                email,
+                newsletter,
+                password
+            );
+            console.log("Регистрация успешна!", response);
+            navigate("/profile");
+        } catch (error) {
+            if (
+                error.response &&
+                error.response.data &&
+                error.response.data.message === "RESOURCE_USER_ALREADY_EXISTS"
+            ) {
+                setErrorMessage("Пользователь с таким email уже существует.");
+            } else {
+                console.error(
+                    "Ошибка при регистрации!",
+                    error.response || error
+                );
+                setErrorMessage(
+                    "Произошла ошибка при регистрации. Пожалуйста, попробуйте позже."
+                );
+            }
+        }
     };
 
     return (
         <div className="Mainn">
-            <Helmet>
-                <title>Регистрация</title>
-            </Helmet>
             <form onSubmit={handleSubmit} className="RegistrationForm">
                 <div className="form-group">
                     <label htmlFor="firstName">Имя:</label>
@@ -71,6 +94,16 @@ const Registration = () => {
                         required
                     />
                 </div>
+                <div className="form-group">
+                    <label htmlFor="password">Пароль:</label>
+                    <input
+                        type="password"
+                        id="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        required
+                    />
+                </div>
                 <div className="form-group checkbox-group">
                     <label>
                         <input
@@ -92,16 +125,16 @@ const Registration = () => {
                         Я принимаю пользовательское соглашение
                     </label>
                 </div>
+                {errorMessage && (
+                    <div className="error-message">{errorMessage}</div>
+                )}
                 <button type="submit" className="RegisterButton">
                     Зарегистрироваться
                 </button>
-                <div className="login-link">
-                    Есть аккаунт?{" "}
-                    <Link to="/authorization" className="login-link-style">
-                        Войти
-                    </Link>
-                </div>
             </form>
+            <div className="login-link">
+                Уже есть аккаунт? <a href="/authorization/">Войти</a>
+            </div>
         </div>
     );
 };

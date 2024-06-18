@@ -1,5 +1,8 @@
+/* Registration.scss */
+
 .Mainn {
     display: flex;
+    justify-content: center; /* Центрируем содержимое по горизонтали */
     padding-top: 20px;
 }
 
@@ -71,17 +74,23 @@
     background-color: #3b2815;
 }
 
+.error-message {
+    color: red;
+    margin-top: 10px;
+    text-align: center; /* Центрируем текст ошибки */
+}
+
 .login-link {
-    margin-top: 15px;
+    margin-top: 20px;
     text-align: center;
 }
 
-.login-link-style {
+.login-link a {
     color: #4d331f;
     font-weight: bold;
     text-decoration: none;
 }
 
-.login-link-style:hover {
+.login-link a:hover {
     text-decoration: underline;
 }

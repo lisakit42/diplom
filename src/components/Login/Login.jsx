@@ -1,39 +1,40 @@
 import "./Login.scss";
 import React, { useState } from "react";
-import { Helmet } from "react-helmet";
+import { useNavigate } from "react-router-dom"; // Импортируем useNavigate
+import authService from "../../services/authService";
 
-function LoginForm() {
-    const [login, setLogin] = useState("");
+const Login = () => {
+    const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [errorMessage, setErrorMessage] = useState("");
+    const navigate = useNavigate(); // Используем хук useNavigate для перенаправления
 
-    const handleLoginChange = (event) => {
-        setLogin(event.target.value);
-    };
-
-    const handlePasswordChange = (event) => {
-        setPassword(event.target.value);
-    };
-
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
-        console.log("Логин:", login);
-        console.log("Пароль:", password);
-        window.location.href = "/profile/";
+
+        try {
+            const response = await authService.login(email, password);
+            console.log("Авторизация успешна!", response);
+            // Перенаправляем на страницу профиля
+            navigate("/profile");
+        } catch (error) {
+            console.error("Ошибка при авторизации!", error.response || error);
+            setErrorMessage(
+                "Неправильный email или пароль. Пожалуйста, попробуйте снова."
+            );
+        }
     };
 
     return (
         <div className="Mainn">
-            <Helmet>
-                <title>Авторизация</title>
-            </Helmet>
             <form onSubmit={handleSubmit} className="LoginForm">
                 <div className="form-group">
-                    <label htmlFor="login">Логин:</label>
+                    <label htmlFor="email">Электронная почта:</label>
                     <input
-                        type="text"
-                        id="login"
-                        value={login}
-                        onChange={handleLoginChange}
+                        type="email"
+                        id="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                         required
                     />
                 </div>
@@ -43,16 +44,19 @@ function LoginForm() {
                         type="password"
                         id="password"
                         value={password}
-                        onChange={handlePasswordChange}
+                        onChange={(e) => setPassword(e.target.value)}
                         required
                     />
                 </div>
+                {errorMessage && (
+                    <div className="error-message">{errorMessage}</div>
+                )}
                 <button type="submit" className="LoginButton">
                     Войти
                 </button>
             </form>
         </div>
     );
-}
+};
 
-export default LoginForm;
+export default Login;

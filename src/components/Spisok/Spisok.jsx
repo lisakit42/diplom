@@ -5,12 +5,12 @@ const Spisok = () => {
         <div className="ea">
             <h3 className="TextAnons">что еще нужно сделать</h3>
 
-            <ul className="TextAnons">
-                <li>избранное</li>
-                <li>10 товаров</li>
+            <ol className="TextAnons">
                 <li>детальная страница платного товара</li>
+                <li>10 товаров</li>
+                <li>избранное</li>
                 <li>футер ссылки на страницу с фильтрами</li>
-            </ul>
+            </ol>
 
             <h3 className="TextAnons">мелкие доработки</h3>
 

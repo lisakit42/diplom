@@ -1,8 +1,8 @@
 import './App.scss';
-import MainHeader from './components/MainHeader/MainHeader'
-import SecondHeader from './components/SecondHeader/SecondHeader'
-import Body from './components/Body/Body'
-import Footer from './components/Footer/Footer'
+import MainHeader from './components/MainHeader/MainHeader';
+import SecondHeader from './components/SecondHeader/SecondHeader';
+import Body from './components/Body/Body';
+import Footer from './components/Footer/Footer';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Catalog from './components/Catalog/Catalog';
 import News from './components/News/News';
@@ -40,7 +40,6 @@ const App = () => {
           <Route path="/search/:query" element={<SearchPage />} />
           <Route path='/catalog/bethovenlunnayasonata/' element={<BethovenLunnayaSonata />} />
           <Route path="/profile/" element={<Profile />} />
-
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </BrowserRouter>
@@ -51,7 +50,5 @@ const App = () => {
     </div>
   );
 }
-
-
 
 export default App;

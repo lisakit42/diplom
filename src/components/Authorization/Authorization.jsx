@@ -1,5 +1,6 @@
 import "./Authorization.scss";
 import LoginForm from "../Login/Login";
+import { Link } from "react-router-dom";
 
 const Authorization = () => {
     return (
@@ -8,9 +9,9 @@ const Authorization = () => {
                 <LoginForm />
                 <div className="register-link">
                     Нет аккаунта? <br />
-                    <a href="/registration/" className="register-link-style">
+                    <Link to="/registration/" className="register-link-style">
                         Зарегистрироваться
-                    </a>
+                    </Link>
                 </div>
             </div>
         </div>
