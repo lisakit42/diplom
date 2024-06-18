@@ -96,3 +96,16 @@
     box-sizing: border-box;
     font-family: Montserrat, sans-serif;
 }
+
+.ProfileEmail {
+    display: block;
+    color: #4d331f;
+    font-weight: 600;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.ProfileName {
+    display: flex;
+    align-items: center;
+}

@@ -1,13 +1,23 @@
 import "./Profile.scss";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ProfilePic from "../upload/profilepic.svg";
 import EditIcon from "../upload/EditIcon.svg";
 import { Helmet } from "react-helmet";
 
 const Profile = () => {
-    const [firstName, setFirstName] = useState("Иван");
-    const [lastName, setLastName] = useState("Иванов");
+    const [user, setUser] = useState({
+        firstName: "",
+        lastName: "",
+        email: "",
+    });
     const [isEditing, setIsEditing] = useState(false);
+
+    useEffect(() => {
+        const storedUser = localStorage.getItem("user");
+        if (storedUser) {
+            setUser(JSON.parse(storedUser));
+        }
+    }, []);
 
     const handleEditClick = () => {
         setIsEditing(true);
@@ -15,6 +25,15 @@ const Profile = () => {
 
     const handleSaveClick = () => {
         setIsEditing(false);
+        localStorage.setItem("user", JSON.stringify(user));
+    };
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setUser((prevState) => ({
+            ...prevState,
+            [name]: value,
+        }));
     };
 
     return (
@@ -30,19 +49,25 @@ const Profile = () => {
                             <>
                                 <input
                                     type="text"
-                                    value={firstName}
-                                    onChange={(e) =>
-                                        setFirstName(e.target.value)
-                                    }
+                                    name="firstName"
+                                    value={user.firstName}
+                                    onChange={handleInputChange}
                                     className="ProfileInput"
                                 />
                                 <input
                                     type="text"
-                                    value={lastName}
-                                    onChange={(e) =>
-                                        setLastName(e.target.value)
-                                    }
+                                    name="lastName"
+                                    value={user.lastName}
+                                    onChange={handleInputChange}
                                     className="ProfileInput"
+                                />
+                                <input
+                                    type="email"
+                                    name="email"
+                                    value={user.email}
+                                    onChange={handleInputChange}
+                                    className="ProfileInput"
+                                    disabled
                                 />
                                 <button
                                     onClick={handleSaveClick}
@@ -53,18 +78,20 @@ const Profile = () => {
                             </>
                         ) : (
                             <>
-                                {firstName} {lastName}
-                                <img
-                                    src={EditIcon}
-                                    alt="Edit"
-                                    className="EditIcon"
-                                    onClick={handleEditClick}
-                                />
+                                <div className="ProfileName">
+                                    {user.firstName} {user.lastName}
+                                    <img
+                                        src={EditIcon}
+                                        alt="Edit"
+                                        className="EditIcon"
+                                        onClick={handleEditClick}
+                                    />
+                                </div>
+                                <div className="ProfileEmail">{user.email}</div>
                             </>
                         )}
                     </div>
                     <div className="ProfileStatus">Premium - пользователь</div>
-
                     <a href="/" className="FavoritesLink">
                         Избранное
                     </a>

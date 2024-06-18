@@ -18,6 +18,8 @@ const register = async (firstName, lastName, birthDate, email, newsletter, passw
                 'Authorization': `Bearer ${process.env.REACT_APP_API_KEY}`
             }
         });
+        // Сохранение данных пользователя в localStorage
+        localStorage.setItem('user', JSON.stringify({ firstName, lastName, email }));
         return response.data;
     } catch (error) {
         console.error('Ошибка при регистрации!', error);
@@ -27,7 +29,7 @@ const register = async (firstName, lastName, birthDate, email, newsletter, passw
 
 const login = async (email, password) => {
     try {
-        const response = await axios.post(`${API_URL}/auth`, { // Обновляем URL на /auth
+        const response = await axios.post(`${API_URL}/auth`, {
             email,
             password,
         }, {
@@ -36,6 +38,9 @@ const login = async (email, password) => {
                 'Authorization': `Bearer ${process.env.REACT_APP_API_KEY}`
             }
         });
+        // Предполагаем, что данные пользователя возвращаются в response.data
+        const { firstName, lastName } = response.data;
+        localStorage.setItem('user', JSON.stringify({ firstName, lastName, email }));
         return response.data;
     } catch (error) {
         console.error('Ошибка при авторизации!', error);
