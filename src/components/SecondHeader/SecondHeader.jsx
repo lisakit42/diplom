@@ -8,7 +8,10 @@ const SecondHeader = () => {
         <a href="/registration/" className="linkSecondHeader">
           <p>Избранное</p>
         </a>
-        <a href="/registration/" className="linkSecondHeader">
+        <a
+          href={localStorage.getItem("user") ? "/profile" : "/authorization"}
+          className="linkSecondHeader"
+        >
           <p>Личный кабинет</p>
         </a>
       </div>
