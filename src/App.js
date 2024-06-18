@@ -40,6 +40,8 @@ const App = () => {
           <Route path="/search/:query" element={<SearchPage />} />
           <Route path='/catalog/bethovenlunnayasonata/' element={<BethovenLunnayaSonata />} />
           <Route path="/profile/" element={<Profile />} />
+          <Route path="/creator/" element={<Creator />} />
+          
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </BrowserRouter>
