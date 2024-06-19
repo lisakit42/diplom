@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./BethovenLunnayaSonata.scss";
 import MainPic1 from "../../../upload/catalogPics/MainPic1.jpg";
 import Like from "../../../upload/fav.svg";
+import CatalogCarousel from "../../../CatalogCarousel/CatalogCArousel";
 
 const BethovenLunnayaSonata = () => {
     const [showNotification, setShowNotification] = useState(false);
@@ -16,6 +17,7 @@ const BethovenLunnayaSonata = () => {
     };
 
     return (
+        <>
         <div className="MainPartCatalog">
             <div className="MainPic">
                 <img src={MainPic1} alt="Main" />
@@ -65,6 +67,8 @@ const BethovenLunnayaSonata = () => {
                 </div>
             )}
         </div>
+            <CatalogCarousel />
+            </>
     );
 };
 

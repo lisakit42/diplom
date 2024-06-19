@@ -3,9 +3,9 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import CardPic from "../upload/notes1.jpg";
-import "../Carousel/Carousel.scss";
+import "../CatalogCarousel/CatalogCarousel.scss"
 
-function Carousel() {
+function CatalogCarousel() {
     const settings = {
         dots: true,
         infinite: true,
@@ -13,19 +13,15 @@ function Carousel() {
         slidesToShow: 1,
         slidesToScroll: 1,
         adaptiveHeight: true,
-        nextArrow: <SampleNextArrow />,
-        prevArrow: <SamplePrevArrow />,
     };
 
-  
-        return (
-            
+    return (
             <section className="carousel">
                 <Slider {...settings}>
-                    {[1, 2, 3, 4].map((slide) => (
+                    {[1].map((slide) => (
                         <div key={slide} className="carousel__slide">
                             <div className="content-slide1">
-                                {[...Array(5)].map((_, index) => (
+                                {[...Array(4)].map((_, index) => (
                                     <div key={index} className="card-content-1">
                                         <img
                                             src={CardPic}
@@ -33,11 +29,14 @@ function Carousel() {
                                             className="CardPic"
                                         />
                                         <p className="card-text">
-                                            <b>Бетховен Людвиг ван</b> - К Элизе
+                                            <a href="/catalog/BethovenLunnayaSonata/" className="card-text__url"><b>Бетховен Людвиг ван</b> - К Элизе</a>
                                         </p>
                                     </div>
                                 ))}
                             </div>
+                    <div className="card-catalog">
+                        <a href="/catalog" className="card-catalog-url">Перейти в каталог</a>
+                    </div>
                         </div>
                     ))}
                 </Slider>
@@ -46,36 +45,5 @@ function Carousel() {
     
 }
 
-function SampleNextArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-        <div
-            className={className}
-            style={{
-                ...style,
-                display: "block",
-                background: "#4d331f",
-                borderRadius: "50%",
-            }}
-            onClick={onClick}
-        />
-    );
-}
 
-function SamplePrevArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-        <div
-            className={className}
-            style={{
-                ...style,
-                display: "block",
-                background: "#4d331f",
-                borderRadius: "50%",
-            }}
-            onClick={onClick}
-        />
-    );
-}
-
-export default Carousel;
+export default CatalogCarousel;

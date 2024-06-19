@@ -14,6 +14,7 @@ import SearchPage from './components/SearchPage/SearchPage';
 import BethovenLunnayaSonata from './components/Products/Free/BethovenLunnayaSonata/BethovenLunnayaSonata';
 import Registration from './components/Registration/Registration';
 import Profile from './components/Profile/Profile';
+import Creator from './components/Creator/Creator';
 
 const App = () => {
   return (
