@@ -3,13 +3,14 @@ import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import "./Catalog.scss";
 import arrow from "../upload/arrow.svg";
+import { Link } from "react-router-dom";
 
 const FilterArrow = ({ sortConfig, objectNames, index }) => {
     return (
         sortConfig.key === objectNames[index] && (
             <img
                 src={arrow}
-                alt="abracadabra"
+                alt="arrow"
                 className={sortConfig.direction === "ascending" ? "rotate" : ""}
             />
         )
@@ -55,15 +56,50 @@ const Catalog = () => {
 
     const getLink = (name, song) => {
         if (name === "Бетховен Людвиг ван" && song === "Лунная Соната") {
-            return "/catalog/BethovenLunnayaSonata/";
+            return "/catalog/bethovenlunnayasonata/";
+        }
+        if (
+            name === "Моцарт Вольфганг Амадей" &&
+            song === "Фортепианный концерт №. 21 до мажор, К. 467"
+        ) {
+            return "/catalog/mozartpianoconcerto21/";
+        }
+        if (name === "Франческо Гаспарини" && song === "Адорамус те") {
+            return "/catalog/gaspariniadoramuste/";
+        }
+        if (name === "Людвиг Ван Бетховен" && song === "К Элизе") {
+            return "/catalog/beethovenfurelise/";
+        }
+        if (name === "Пётр Ильич Чайковский" && song === "Лебединое озеро") {
+            return "/catalog/chaykovskyswanlake/";
+        }
+        if (name === "Пётр Ильич Чайковский" && song === "Времена года") {
+            return "/catalog/chaykovskyvremenagoda/";
+        }
+        if (
+            name === "Луиджи Боккерини" &&
+            song === "Соната для виолончели соль мажор, G.5"
+        ) {
+            return "/catalog/boccherinisonatag5/";
+        }
+        if (
+            name === "Иоганнес Брамс" &&
+            song === "Венгерский танец № 5 (фа–диез минор)"
+        ) {
+            return "/catalog/brahmsHungariandance5/";
         }
         if (
             name === "Моцарт Вольфганг Амадей" &&
             song === "Маленькая ночная серенада"
         ) {
-            return "/catalog/MocartMalenkayaNochnayaSerenada/";
+            return "/catalog/mocartMalenkayanochnayaserenada/";
         }
-
+        if (
+            name === "Сергей Рахманинов" &&
+            song === "Фортепианный концерт №2 (до минор)"
+        ) {
+            return "/catalog/rachmaninovpianoconcerto2/";
+        }
         return "#";
     };
 
@@ -131,14 +167,14 @@ const Catalog = () => {
                     {sortedMusicParts.map((part, index) => (
                         <tr key={index}>
                             <td>
-                                <a href={getLink(part.name, part.song)}>
+                                <Link to={getLink(part.name, part.song)}>
                                     {part.name}
-                                </a>
+                                </Link>
                             </td>
                             <td>
-                                <a href={getLink(part.name, part.song)}>
+                                <Link to={getLink(part.name, part.song)}>
                                     {part.song}
-                                </a>
+                                </Link>
                             </td>
                             <td>{part.instrument}</td>
                             <td>{part.format}</td>
