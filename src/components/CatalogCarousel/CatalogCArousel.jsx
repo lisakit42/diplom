@@ -30,31 +30,31 @@ function CatalogCarousel() {
                 name: "Бетховен Людвиг ван",
                 song: "Лунная Соната",
                 img: BethovenLunnayaSonataPic,
-                link: "/catalog/BethovenLunnayaSonata",
+                link: "/catalog/bethovenlunnayasonata/",
             },
             {
                 name: "Моцарт Вольфганг Амадей",
                 song: "Маленькая ночная серенада",
                 img: MocartMalenkayaNochnayaSerenadaPic,
-                link: "/catalog/MozartMalenkayaNochnayaSerenada",
+                link: "/catalog/mocartmalenkayanochnayaserenada/",
             },
             {
                 name: "Пётр Ильич Чайковский",
                 song: "Времена года",
                 img: TchaikovskyVremenaGodaPic,
-                link: "/catalog/TchaikovskyVremenaGoda",
+                link: "/catalog/chaykovskyvremenagoda/",
             },
             {
                 name: "Сергей Рахманинов",
                 song: "Фортепианный концерт №2 (до минор)",
                 img: RachmaninovConcertoPic,
-                link: "/catalog/RachmaninovConcerto",
+                link: "/catalog/rachmaninovpianoconcerto2/",
             },
             {
                 name: "Людвиг Ван Бетховен",
                 song: "К Элизе",
                 img: BeethovenKElizePic,
-                link: "/catalog/BeethovenKElize",
+                link: "/catalog/beethovenfurelise/",
             },
         ],
         [
@@ -62,31 +62,31 @@ function CatalogCarousel() {
                 name: "Пётр Ильич Чайковский",
                 song: "Лебединое озеро",
                 img: TchaikovskyLebedinoeOzeroPic,
-                link: "/catalog/TchaikovskyLebedinoeOzero",
+                link: "/catalog/chaykovskyswanlake/",
             },
             {
                 name: "Иоганнес Брамс",
                 song: "Венгерский танец № 5 (фа–диез минор)",
                 img: BrahmsHungarianDancePic,
-                link: "/catalog/BrahmsHungarianDance",
+                link: "/catalog/brahmshungariandance5/",
             },
             {
                 name: "Моцарт Вольфганг Амадей",
                 song: "Фортепианный концерт №. 21 до мажор, К. 467",
                 img: MozartConcertoPic,
-                link: "/catalog/MozartConcerto",
+                link: "/catalog/mozartpianoconcerto21/",
             },
             {
                 name: "Франческо Гаспарини",
                 song: "Адорамус те",
                 img: GaspariniAdoramusPic,
-                link: "/catalog/GaspariniAdoramus",
+                link: "/catalog/gaspariniadoramuste/",
             },
             {
                 name: "Луиджи Боккерини",
                 song: "Соната для виолончели соль мажор, G.5",
                 img: BoccheriniSonataPic,
-                link: "/catalog/BoccheriniSonata",
+                link: "/catalog/boccherinisonatag5/",
             },
         ],
     ];
@@ -103,11 +103,13 @@ function CatalogCarousel() {
                                     className={`card-content-${itemIndex + 1}`}
                                 >
                                     <div className="image-container">
-                                        <img
-                                            src={item.img}
-                                            alt={item.name}
-                                            className="card-img"
-                                        />
+                                        <a href={item.link}>
+                                            <img
+                                                src={item.img}
+                                                alt={item.name}
+                                                className="card-img"
+                                            />
+                                        </a>
                                     </div>
                                     <p className="card-text">
                                         <a

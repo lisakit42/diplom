@@ -6,7 +6,6 @@ const Spisok = () => {
             <h3 className="TextAnons">что еще нужно сделать</h3>
 
             <ol className="TextAnons">
-                <li>10 товаров</li>
                 <li>избранное</li>
                 <li>футер ссылки на страницу с фильтрами</li>
             </ol>
