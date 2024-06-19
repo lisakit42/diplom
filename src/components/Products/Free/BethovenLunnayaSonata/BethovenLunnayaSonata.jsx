@@ -18,46 +18,54 @@ const BethovenLunnayaSonata = () => {
 
     return (
         <>
-        <div className="MainPartCatalog">
-            <div className="MainPic">
-                <img src={MainPic1} alt="Main" />
-            </div>
-            <div className="MainDecription">
-                <h2>
-                    <b>Людвиг Ван Бетховен</b> - Лунная соната
-                </h2>
-                <br />
-                <div className="specifications">
-                    <div>
-                        <p className="svoystvo">Сложность</p>
-                        <p className="svoystvo">Инструмент</p>
+            <div className="MainPartCatalog">
+                <div className="MainPic">
+                    <img src={MainPic1} alt="Main" />
+                </div>
+                <div className="MainDecription">
+                    <h2>
+                        <b>Людвиг Ван Бетховен</b> - Лунная соната
+                    </h2>
+                    <br />
+                    <div className="specifications">
+                        <div>
+                            <p className="svoystvo">Сложность</p>
+                            <p className="svoystvo">Инструмент</p>
+                        </div>
+                        <div className="line"></div>
+                        <div>
+                            <p>Легко</p>
+                            <p>Гитара</p>
+                        </div>
                     </div>
-                    <div className="line"></div>
-                    <div>
-                        <p>Легко</p>
-                        <p>Гитара</p>
+                    <div className="FavItemContainer">
+                        <button
+                            className="FavItem"
+                            onClick={handleAddToFavorites}
+                        >
+                            <img
+                                src={Like}
+                                className="FavItemImage"
+                                alt="Like"
+                            />
+                            {isFavorite
+                                ? "Убрать из избранного"
+                                : "Добавить в избранное"}
+                        </button>
                     </div>
                 </div>
-                <div className="FavItemContainer">
-                    <button className="FavItem" onClick={handleAddToFavorites}>
-                        <img src={Like} className="FavItemImage" alt="Like" />
-                        {isFavorite
-                            ? "Убрать из избранного"
-                            : "Добавить в избранное"}
-                    </button>
+                <div className="MainButtons">
+                    <p>Бесплатно</p>
+                    <a href="#">
+                        <button>Скачать .pdf</button>
+                    </a>
+                    <a href="#">
+                        <button>Скачать .jpg</button>
+                    </a>
+                    <a href="#">
+                        <button>Скачать .midi</button>
+                    </a>
                 </div>
-            </div>
-            <div className="MainButtons">
-                <p>Бесплатно</p>
-                <a href="#">
-                    <button>Скачать .pdf</button>
-                </a>
-                <a href="#">
-                    <button>Скачать .jpg</button>
-                </a>
-                <a href="#">
-                    <button>Скачать .midi</button>
-                </a>
             </div>
             {showNotification && (
                 <div className="notification">
@@ -66,9 +74,9 @@ const BethovenLunnayaSonata = () => {
                         : "Удалено из избранного"}
                 </div>
             )}
-        </div>
+            <h3 className="H3Catalog">Смотрите также</h3>
             <CatalogCarousel />
-            </>
+        </>
     );
 };
 
