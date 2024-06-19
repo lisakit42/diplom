@@ -15,6 +15,7 @@ import BethovenLunnayaSonata from './components/Products/Free/BethovenLunnayaSon
 import Registration from './components/Registration/Registration';
 import Profile from './components/Profile/Profile';
 import Creator from './components/Creator/Creator';
+import MocartMalenkayaNochnayaSerenada from './components/Products/Paid/MocartMalenkayaNochnayaSerenada/MocartMalenkayaNochnayaSerenada';
 
 const App = () => {
   return (
@@ -39,10 +40,12 @@ const App = () => {
           <Route path="/premium/" element={<Premium />} />
           <Route path="/searchpage/" element={<SearchPage />} />
           <Route path="/search/:query" element={<SearchPage />} />
-          <Route path='/catalog/bethovenlunnayasonata/' element={<BethovenLunnayaSonata />} />
           <Route path="/profile/" element={<Profile />} />
           <Route path="/creator/" element={<Creator />} />
-          
+
+          <Route path='/catalog/bethovenlunnayasonata/' element={<BethovenLunnayaSonata />} />
+          <Route path='/catalog/mocartmalenkayanochnayaserenada/' element={<MocartMalenkayaNochnayaSerenada />} />
+
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </BrowserRouter>

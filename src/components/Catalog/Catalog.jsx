@@ -61,9 +61,9 @@ const Catalog = () => {
             name === "Моцарт Вольфганг Амадей" &&
             song === "Маленькая ночная серенада"
         ) {
-            return "/catalog/MozartNochnayaSerenada/";
+            return "/catalog/MocartMalenkayaNochnayaSerenada/";
         }
-        // Добавьте дополнительные условия для других композиторов и произведений
+
         return "#";
     };
 

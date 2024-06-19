@@ -25,11 +25,23 @@
     font-family: Montserrat;
     text-transform: uppercase;
     font-size: 14px;
+    text-align: center;
+}
+
+.card-link {
+    text-decoration: none;
+    color: #4d331f;
+}
+
+.card-link:hover {
+    color: #000;
 }
 
 .CardPic {
     width: 188px;
     height: 188px;
+    object-fit: cover;
+    object-position: center;
 }
 
 .slick-next,
@@ -58,7 +70,6 @@
     margin: 20px auto;
     position: relative;
 }
-
 
 .card-catalog-url {
     position: absolute;

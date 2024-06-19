@@ -16,7 +16,11 @@
     padding: 2%;
 }
 
-.card-content-1 {
+.card-content-1,
+.card-content-2,
+.card-content-3,
+.card-content-4,
+.card-content-5 {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -29,9 +33,19 @@
     font-size: 14px;
 }
 
-.CardPic {
+.image-container {
     width: 188px;
     height: 188px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .slick-slider .slick-arrow.slick-next,
@@ -92,4 +106,3 @@
     line-height: normal;
     text-transform: uppercase;
 }
-
