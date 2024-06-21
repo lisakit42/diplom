@@ -48,14 +48,28 @@ const Footer = () => {
                     </a>
                 </div>
                 <div className="SpisokFooter">
-                    <a href="/authorization/" className="link">
+                    <a
+                        href={
+                            localStorage.getItem("user")
+                                ? "/favourite"
+                                : "/authorization"
+                        }
+                        className="link"
+                    >
                         <p>
                             <strong>Избранное</strong>
                         </p>
                     </a>
                 </div>
                 <div className="SpisokFooter">
-                    <a href="/authorization/" className="link">
+                    <a
+                        href={
+                            localStorage.getItem("user")
+                                ? "/profile"
+                                : "/authorization"
+                        }
+                        className="link"
+                    >
                         <p>
                             <strong>Личный кабинет</strong>
                         </p>

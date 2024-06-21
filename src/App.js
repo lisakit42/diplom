@@ -16,6 +16,7 @@ import BethovenLunnayaSonata from './components/Products/Free/BethovenLunnayaSon
 import Registration from './components/Registration/Registration';
 import Profile from './components/Profile/Profile';
 import Creator from './components/Creator/Creator';
+import Favourite from './components/Favourite/Favourite';
 
 import MozartPianoConcerto21 from './components/Products/Paid/MozartPianoConcerto21/MozartPianoConcerto21';
 import GaspariniAdoramusTe from './components/Products/Paid/GaspariniAdoramusTe/GaspariniAdoramusTe';
@@ -52,7 +53,9 @@ const App = () => {
           <Route path="/search/:query" element={<SearchPage />} />
           <Route path="/profile/" element={<Profile />} />
           <Route path="/creator/" element={<Creator />} />
+          <Route path="/favourite/" element={<Favourite />} />
 
+          
           <Route path='/catalog/bethovenlunnayasonata/' element={<BethovenLunnayaSonata />} />
           <Route path='/catalog/mozartpianoconcerto21/' element={<MozartPianoConcerto21 />} />
           <Route path='/catalog/gaspariniadoramuste/' element={<GaspariniAdoramusTe />} />

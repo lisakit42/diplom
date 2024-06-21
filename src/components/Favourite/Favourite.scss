@@ -1,0 +1,81 @@
+.Favourite {
+    background-color: white;
+    margin: 3%;
+    padding: 3%;
+}
+
+.Cards {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+.Card {
+    margin: 5px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.sixth-card {
+    grid-column: 1;
+}
+
+.CardTemplate {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+}
+
+.TextItem {
+    font-family: Montserrat;
+    color: #4d331f;
+    font-weight: 400;
+    text-align: center;
+}
+
+.Title {
+    color: #4d331f;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.ItemPic {
+    height: 200px;
+    width: 200px;
+    border-radius: 10px;
+}
+
+.FavItem {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.FavItemImage {
+    height: 24px;
+    width: 24px;
+}
+
+.notification {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}

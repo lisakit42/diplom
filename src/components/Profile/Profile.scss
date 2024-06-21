@@ -108,4 +108,31 @@
 .ProfileName {
     display: flex;
     align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.LogoutButton {
+    background-color: #4d331f;
+    color: #e6b17e;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+    width: 100%;
+    font-family: Montserrat, sans-serif;
+}
+
+.ProfileStatus {
+    color: #4d331f;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: left;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    text-decoration: none;
 }
