@@ -47,7 +47,6 @@ const Profile = () => {
     const handleSubscriptionClick = () => {
         if (subscription === "Premium - подписка") {
             setSubscription("Базовая подписка");
-            navigate("/premium/");
         } else {
             setSubscription("Premium - подписка");
         }
