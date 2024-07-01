@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./InputEmail.scss";
 
-function InputWithValidation() {
+function InputEmail() {
     const [inputValue, setInputValue] = useState("");
     const [isValid, setIsValid] = useState(true);
 
@@ -13,9 +13,9 @@ function InputWithValidation() {
     };
 
     return (
-        <div>
+        <div className="form-group">
             <label htmlFor="inputField" className="inputLabel">
-                введите e-mail
+                Введите e-mail
             </label>
             <br />
             <input
@@ -35,4 +35,4 @@ function InputWithValidation() {
     );
 }
 
-export default InputWithValidation;
+export default InputEmail;

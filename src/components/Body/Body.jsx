@@ -4,8 +4,32 @@ import InputName from "./InputName/InputName.jsx";
 import InputEmail from "./InputEmail/InputEmail.jsx";
 import Carousel from "../Carousel/Carousel.jsx";
 import { Helmet } from "react-helmet";
+import React, { useState } from "react";
 
 const Body = () => {
+    const [isModalOpen, setModalOpen] = useState(false);
+    const [agreement, setAgreement] = useState(false);
+
+    const handleSubscribeClick = () => {
+        setModalOpen(true);
+    };
+
+    const handleCloseModal = () => {
+        setModalOpen(false);
+    };
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        if (!agreement) {
+            alert(
+                "Вы должны принять политику конфиденциальности и согласие на обработку данных"
+            );
+            return;
+        }
+        console.log("Subscribed!");
+        setModalOpen(false);
+    };
+
     return (
         <div className="Body">
             <Helmet>
@@ -18,15 +42,64 @@ const Body = () => {
                 </div>
 
                 <h3>Рассылка</h3>
-                <h4 className="rassilka-text">
-                    Будь в курсе наших новинок и акций: подпишись на нашу
-                    рассылку!
-                </h4>
                 <div className="mailing">
-                    <InputName />
-                    <InputEmail />
-                    <div className="button-fos">Отправить</div>
+                    <h4 className="rassilka-text">
+                        Будь в курсе наших новинок и акций: подпишись на нашу
+                        рассылку!
+                    </h4>
+                    <br />
+                    <button
+                        className="button-fos"
+                        onClick={handleSubscribeClick}
+                    >
+                        Подписаться
+                    </button>
                 </div>
+
+                {isModalOpen && (
+                    <div className="modal">
+                        <div className="modal-content">
+                            <span className="close" onClick={handleCloseModal}>
+                                &times;
+                            </span>
+                            <form
+                                onSubmit={handleSubmit}
+                                className="SubscriptionForm"
+                            >
+                                <InputName />
+                                <InputEmail />
+                                <div className="form-group checkbox-group">
+                                    <label>
+                                        <input
+                                            type="checkbox"
+                                            checked={agreement}
+                                            onChange={(e) =>
+                                                setAgreement(e.target.checked)
+                                            }
+                                            required
+                                        />
+                                        Я согласен с{" "}
+                                        <a
+                                            href="/privacy"
+                                            className="highlight-link"
+                                        >
+                                            политикой конфиденциальности и
+                                            согласием на обработку персональных
+                                            данных
+                                        </a>
+                                    </label>
+                                </div>
+                                <button
+                                    type="submit"
+                                    className="RegisterButton"
+                                >
+                                    Подписаться
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                )}
+
                 <h3>Premium подписка</h3>
                 <div className="premium">
                     <img src={PremiumPic} alt="" className="PremiumPic" />

@@ -1,8 +1,6 @@
-/* Registration.scss */
-
 .Mainn {
     display: flex;
-    justify-content: center; /* Центрируем содержимое по горизонтали */
+    justify-content: center;
     padding-top: 20px;
 }
 
@@ -77,12 +75,13 @@
 .error-message {
     color: red;
     margin-top: 10px;
-    text-align: center; /* Центрируем текст ошибки */
+    text-align: center;
 }
 
 .login-link {
     margin-top: 20px;
     text-align: center;
+    font-family: Montserrat, sans-serif;
 }
 
 .login-link a {
@@ -92,5 +91,15 @@
 }
 
 .login-link a:hover {
+    text-decoration: underline;
+}
+
+.highlight-link {
+    text-decoration: none;
+    color: #4d331f;
+    font-weight: bold;
+}
+
+.highlight-link:hover {
     text-decoration: underline;
 }

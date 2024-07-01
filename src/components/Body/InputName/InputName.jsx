@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./InputName.scss";
 
-function InputWithValidation() {
+function InputName() {
     const [inputValue, setInputValue] = useState("");
     const [isValid, setIsValid] = useState(true);
 
@@ -13,7 +13,7 @@ function InputWithValidation() {
     };
 
     return (
-        <div>
+        <div className="form-group">
             <label htmlFor="inputField" className="inputLabel">
                 Введите имя
             </label>
@@ -35,4 +35,4 @@ function InputWithValidation() {
     );
 }
 
-export default InputWithValidation;
+export default InputName;

@@ -1,0 +1,34 @@
+.ea {
+    background-color: white;
+    margin: 3%;
+    padding: 3%;
+    font-family: Montserrat;
+    color: #4d331f;
+    font-weight: 400;
+    line-height: normal;
+    text-align: left;
+    width: 90%;
+}
+
+.toc {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.toc-link {
+    border: 2px solid #4d331f;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.toc a {
+    color: #4d331f;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.toc a:hover {
+    text-decoration: underline;
+}

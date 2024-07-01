@@ -10,13 +10,37 @@
     line-height: normal;
     text-transform: uppercase;
     text-align: left;
+    margin-bottom: 10px;
 }
 
 .inputField {
     box-sizing: border-box;
     border: 2px solid rgba(77, 51, 31, 0.7);
     background: rgb(230, 177, 126);
-    width: 150%;
-    padding: 5px;
+    width: 100%;
+    padding: 8px;
     font-family: Montserrat;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.submit-button {
+    box-sizing: border-box;
+    border: 3px solid rgba(230, 177, 126, 0.7);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    background: rgb(77, 51, 31);
+    padding: 10px 20px;
+    cursor: pointer;
+    color: rgb(230, 177, 126);
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+.submit-button:hover {
+    background: rgba(77, 51, 31, 0.8);
 }

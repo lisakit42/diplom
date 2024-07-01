@@ -17,6 +17,7 @@ import Registration from "./components/Registration/Registration";
 import Profile from "./components/Profile/Profile";
 import Creator from "./components/Creator/Creator";
 import Favourite from "./components/Favourite/Favourite";
+import Privacy from "./components/Privacy/Privacy";
 
 import MozartPianoConcerto21 from "./components/Products/Paid/MozartPianoConcerto21/MozartPianoConcerto21";
 import GaspariniAdoramusTe from "./components/Products/Paid/GaspariniAdoramusTe/GaspariniAdoramusTe";
@@ -54,6 +55,7 @@ const App = () => {
           <Route path="/profile/" element={<Profile />} />
           <Route path="/creator/" element={<Creator />} />
           <Route path="/favourite/" element={<Favourite />} />
+          <Route path="/privacy/" element={<Privacy />} />
 
           <Route
             path="/catalog/bethovenlunnayasonata/"
