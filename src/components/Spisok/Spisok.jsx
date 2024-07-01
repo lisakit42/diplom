@@ -7,9 +7,6 @@ const Spisok = () => {
 
             <ol className="TextAnons">
                 <li>согласие + политика</li>
-                <li>футер ссылки на страницу с фильтрами</li>
-                <li>id-пользователя</li>
-                <li>оставшееся время подписки</li>
             </ol>
 
             <h3 className="TextAnons">мелкие доработки</h3>

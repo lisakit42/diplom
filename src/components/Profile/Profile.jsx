@@ -4,6 +4,7 @@ import ProfilePic from "../upload/profilepic.svg";
 import EditIcon from "../upload/EditIcon.svg";
 import { Helmet } from "react-helmet";
 import { useNavigate } from "react-router-dom";
+import QuestionIcon from "../upload/question.svg";
 
 const Profile = () => {
     const navigate = useNavigate();
@@ -11,9 +12,11 @@ const Profile = () => {
         firstName: "",
         lastName: "",
         email: "",
+        id: "",
     });
     const [isEditing, setIsEditing] = useState(false);
     const [subscription, setSubscription] = useState("Premium - подписка");
+    const [showTooltip, setShowTooltip] = useState(false);
 
     useEffect(() => {
         const storedUser = localStorage.getItem("user");
@@ -50,6 +53,10 @@ const Profile = () => {
         } else {
             setSubscription("Premium - подписка");
         }
+    };
+
+    const handleTooltipClick = () => {
+        setShowTooltip(!showTooltip);
     };
 
     return (
@@ -104,14 +111,38 @@ const Profile = () => {
                                     />
                                 </div>
                                 <div className="ProfileEmail">{user.email}</div>
+                                <div className="ProfileId">ID: {user.id}</div>
                             </>
                         )}
                     </div>
-                    <div
-                        className="ProfileStatus"
-                        onClick={handleSubscriptionClick}
-                    >
-                        {subscription}
+                    <div className="ProfileStatusContainer">
+                        <div
+                            className="ProfileStatus"
+                            onClick={handleSubscriptionClick}
+                        >
+                            {subscription}
+                        </div>
+                        <img
+                            src={QuestionIcon}
+                            alt="Question"
+                            className="QuestionIcon"
+                            onClick={handleTooltipClick}
+                        />
+                        {showTooltip && (
+                            <div className="Tooltip">
+                                {subscription === "Базовая подписка" ? (
+                                    <span>
+                                        Приобрести Premium можно{" "}
+                                        <a href="/premium">по ссылке</a>
+                                    </span>
+                                ) : (
+                                    <span>
+                                        Осталось 10 дней Premium.{" "}
+                                        <a href="/premium">Продлить</a>
+                                    </span>
+                                )}
+                            </div>
+                        )}
                     </div>
                     <a href="/favourite" className="FavoritesLink">
                         Избранное
